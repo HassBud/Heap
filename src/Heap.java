@@ -53,6 +53,7 @@ public class Heap {
         }
 
         public void swap(Node direction){
+            depthTree++; // checks the depths of the tree
             int temp = prio;
             prio = direction.prio;
             direction.prio = temp;
@@ -63,34 +64,33 @@ public class Heap {
             if(left == null && right == null){
                 return 0;
             }
-            sizeHeap++;
             if(right == null){
                 if(prio > left.prio) {
                     swap(left);
                     left.push();
                 }
-                 return sizeHeap;
+                 return depthTree;
             }
             else if (left == null){
                 if(prio > right.prio){
                     swap(right);
                     right.push();
                 }
-                   return sizeHeap;
+                   return depthTree;
             }
             else if(left.prio < right.prio){
                 if(left.prio < prio){
                 swap(left);
                 left.push();
                 }
-                return sizeHeap;
+                return depthTree;
             }
             else {
                 if(right.prio < prio){
                     swap(right);
                     right.push();
                 }
-                return sizeHeap;
+                return depthTree;
             }
 
         }
@@ -101,14 +101,14 @@ public class Heap {
     Node root;
     Node current;
     Integer currentValue;
-    int sizeHeap;
+    int depthTree;
 
 
     public Heap(){
         root = null;
         current = null;
         currentValue = 0;
-        sizeHeap = 0;
+        depthTree = 0;
     }
 
 
@@ -136,8 +136,9 @@ public class Heap {
             return null;
         }
         root.prio += incr;
+        depthTree = 0;
         root.push();
-        return sizeHeap;
+        return depthTree;
     }
 
     public void printTree() {
