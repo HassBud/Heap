@@ -22,6 +22,9 @@ public class HeapTest {
         heapArray.enqueue(10);
         heapArray.enqueue(1);
         heapArray.dequeue();
+        heapArray.printHeap();
+        heapArray.dequeue();
+        heapArray.printHeap();
         heapArray.dequeue();
         heapArray.printHeap();
 

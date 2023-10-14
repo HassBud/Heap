@@ -19,10 +19,11 @@ public class HeapArray {
 
     }
     public Integer dequeue() throws Exception {
-        int ret = heap[0];
-        if(heap[0] == 0){
+
+        if(index == 0){
             throw new Exception("Heap is empty");
         }
+        Integer ret = heap[0];
         heap[0] = heap[index-1];
         heap[index-1] = null;
         sink(0);
@@ -34,10 +35,7 @@ public class HeapArray {
         Integer left = (position * 2)+1;
         Integer right = (position * 2) +2;
 
-        if(position == null){
-            return;
-        }
-        if(left <= heap.length-1) {
+        if(left < index-1) {
             if (heap[left] < heap[position]) {
                 int temp = heap[position];
                 heap[position] = heap[left];
@@ -45,7 +43,7 @@ public class HeapArray {
                 sink(left);
             }
         }
-        if (right <= heap.length-1) {
+        if (right < index-1) {
             if (heap[right] < heap[position]) {
                 int temp = heap[position];
                 heap[position] = heap[right];
