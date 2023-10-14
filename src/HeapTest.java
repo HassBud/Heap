@@ -1,7 +1,7 @@
 public class HeapTest {
     public static void main(String[] arg) {
 
-        Heap heap = new Heap();
+      /*  Heap heap = new Heap();
 
         heap.enqueue(20);
         heap.enqueue(10);
@@ -12,6 +12,12 @@ public class HeapTest {
         System.out.println(heap.push(15));
         heap.dequeue();
         heap.printTree();
+
+       */
+
+        HeapArray heapArray = new HeapArray();
+        heapArray.enqueue(3);
+
 
     }
 }
