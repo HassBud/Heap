@@ -1,5 +1,5 @@
 public class HeapTest {
-    public static void main(String[] arg) {
+    public static void main(String[] arg) throws Exception {
 
       /*  Heap heap = new Heap();
 
@@ -17,7 +17,11 @@ public class HeapTest {
 
         HeapArray heapArray = new HeapArray();
         heapArray.enqueue(3);
-
+        heapArray.enqueue(5);
+        heapArray.enqueue(6);
+        heapArray.enqueue(10);
+        heapArray.enqueue(1);
+        heapArray.printHeap();
 
     }
 }
