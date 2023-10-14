@@ -31,13 +31,13 @@ public class HeapArray {
     }
 
     private void sink(Integer position) {
-        Integer left = (index * 2)+1;
-        Integer right = (index * 2) +2;
+        Integer left = (position * 2)+1;
+        Integer right = (position * 2) +2;
 
         if(position == null){
             return;
         }
-        if(left <= index-1) {
+        if(left <= heap.length-1) {
             if (heap[left] < heap[position]) {
                 int temp = heap[position];
                 heap[position] = heap[left];
@@ -45,7 +45,7 @@ public class HeapArray {
                 sink(left);
             }
         }
-        if (right <= index-1) {
+        if (right <= heap.length-1) {
             if (heap[right] < heap[position]) {
                 int temp = heap[position];
                 heap[position] = heap[right];
