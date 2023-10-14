@@ -44,11 +44,11 @@ public class Heap {
             else if (right.prio < left.prio) {
                 prio = right.prio;
                 right = right.remove();
-                return right;
+                return this;
             } else {
                 prio = left.prio;
                 left = left.remove();
-                return left;
+                return this;
             }
         }
 

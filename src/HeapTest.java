@@ -10,6 +10,7 @@ public class HeapTest {
         heap.enqueue(16);
         heap.enqueue(95);
         System.out.println(heap.push(15));
+        heap.dequeue();
         heap.printTree();
 
     }
